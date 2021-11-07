@@ -4,4 +4,5 @@ server
 quine.c
 .bashrc
 src/client
+src/server
 .vscode
