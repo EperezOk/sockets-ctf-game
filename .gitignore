@@ -6,3 +6,4 @@ quine.c
 src/client
 src/server
 .vscode
+.bash_history
