@@ -1,16 +1,6 @@
-#include <sys/types.h>          
-#include <sys/socket.h>
-#include <arpa/inet.h>
-#include <string.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "./include/connection.h"
 
-#define PORT 8080
-#define SERVER_ADDRESS "0.0.0.0"
 #define BUFFER_SIZE 128
-#define handle_error(msg) \
-           do { perror(msg); exit(EXIT_FAILURE); } while (0)
 
 int main(void) {
 	int fdSocket;
@@ -29,8 +19,9 @@ int main(void) {
     handle_error("connect");
   }
 
-  int n;
   setvbuf(stdout, NULL, _IONBF, 0);
+
+  int n;
   printf("Inserte la respuesta al desafío: ");
   while ((n = read(0, buffer, BUFFER_SIZE)) > 0) {
     if (write(fdSocket, buffer, n) == -1) {

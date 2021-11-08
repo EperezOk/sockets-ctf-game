@@ -38,8 +38,6 @@ int main(void) {
 
   setvbuf(stdout, NULL, _IONBF, 0);
 
-  int n;
-
   gameLoop(fdClient);
 
   close(fdClient);
