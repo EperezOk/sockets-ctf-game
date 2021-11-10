@@ -1,6 +1,7 @@
 *.txt
 quine
 server
+client
 quine.c
 .bashrc
 src/client
