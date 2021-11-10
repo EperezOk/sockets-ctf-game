@@ -49,14 +49,18 @@ void gameLoop(int fdClient) {
   srand(getpid());
   int challenge = 0; 
   while(challenge < CHALLENGES) {
+    system("clear");
     printDesafioMsg();
     if (challenges[challenge]() == 0)
       challenge++;
-    else
+    else {
       printf("\nRespuesta incorrecta: %s\n", buffer);
+      sleep(2);
+    }
   }
-
-  printf("\nFelicitaciones, finalizaron el juego. Ahora deberán implementar el servidor que se comporte como el servidor provisto\n\n");
+  
+  system("clear");
+  printf("Felicitaciones, finalizaron el juego. Ahora deberán implementar el servidor que se comporte como el servidor provisto\n\n");
 }
 
 static int checkAnswer(char *answer) {
@@ -66,6 +70,8 @@ static int checkAnswer(char *answer) {
 
   if (n > 0)
     buffer[n-1] = 0;
+  else
+    exit(0);
 
   return strcmp(answer, buffer);
 }
@@ -123,7 +129,7 @@ static int challenge4() {
 char too_easy;
 
 static int challenge5() {
-  printf("respuesta = strings:227\n\n\n");
+  printf("respuesta = strings:235\n\n\n");
   printPreguntaMsg();
   printf("¿Cómo garantiza TCP que los paquetes llegan en orden y no se pierden?\n\n");
 
@@ -137,7 +143,7 @@ static int challenge6() {
     "Un servidor suele crear un nuevo proceso o thread para atender las conexiones entrantes."
     "¿Qué conviene más?\n\n");
 
-  return checkAnswer(".RUN_ME"); // TODO: agregar seccion para verla desde objdump -x ./server
+  return checkAnswer(".RUN_ME");
 }
 
 static int challenge7() {
@@ -189,7 +195,7 @@ static int challenge10() {
   else {
     printf("¡Genial!, ya lograron meter un programa en quine.c, veamos si hace lo que corresponde.\n");
 
-    if (system("./quine | diff -quine.c") != 0) {
+    if (system("./quine | diff quine.c -") != 0) {
       printf("\n%s\n", "diff encontró diferencias.");
       printf("\nENTER para reintentar.\n\n");
     }
