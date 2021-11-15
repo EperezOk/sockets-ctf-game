@@ -6,6 +6,12 @@
 - Pérez Ezequiel 61475
 - Ye Li Valentín 61011
 
+## Entregables
+
+- En la carpeta `src` se encuentra el código de los programas cliente y servidor.
+- En el archivo `respuestas.md` se encuentran las respuestas a los desafíos.
+- En el archivo `desarrollo.pdf` se encuentra un paso a paso más detallado de los desafíos y respuestas breves a las preguntas de investigación.
+
 ## Compilación y ejecución
 
 Para compilar los archivos, se recomienda tener docker instalado con el contenedor `agodio/itba-so:1.0` dado por la cátedra.
