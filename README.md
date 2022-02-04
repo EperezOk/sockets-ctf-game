@@ -1,5 +1,9 @@
 # TP3 SO - README
 
+## Introduction
+
+The aim of this project is to learn about the Socket mechanism in Linux while building a CTF game, which will consist in a server that handles connections and outputs the different questions to the clients.
+
 ## Autores
 
 - Baliarda Gonzalo 61490
